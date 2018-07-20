@@ -11,6 +11,11 @@ var elTrainDestination = $("#train-destination");
 // form validation for Time using jQuery Mask plugin
 var elTrainTime = $("#train-time").mask("00:00");
 var elTimeFreq = $("#time-freq").mask("00");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 919e79f5e419ea88c08ff2f26ce54b0f4287f369
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAtgG7Vg6bmjKnQN3W14x1ZVCSrZByp8qM",
@@ -63,7 +68,12 @@ database.ref("/trains").on("child_added", function (snapshot) {
         function () {
             $(this).find("span").hide();
         });
+<<<<<<< HEAD
     // REMOVE ITEMS (still need to fix)
+=======
+
+    // REMOVE ITEMS 
+>>>>>>> 919e79f5e419ea88c08ff2f26ce54b0f4287f369
     $("#table-data").on("click", "tr span", function () {
         console.log(this);
         var trainRef = database.ref("/trains/");

@@ -5,7 +5,10 @@
 #head {
     background-image: url("../images/a047f3e3b6063580970bad1e80ef4a59--subway-signs-subway-art.jpg");
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-size: auto;
+=======
+>>>>>>> 919e79f5e419ea88c08ff2f26ce54b0f4287f369
     text-align: right;
     background-color: darkblue;  
     color: white;
@@ -37,6 +40,14 @@ td {
     width: 1%;
 }
 
+<<<<<<< HEAD
+=======
+h1  {
+    width: 5%;
+    padding-bottom: 1%; 
+} 
+
+>>>>>>> 919e79f5e419ea88c08ff2f26ce54b0f4287f369
 .glyphicon-remove {
     color: darkred;
     padding-left: 15%;
