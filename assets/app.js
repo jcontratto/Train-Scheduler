@@ -14,14 +14,14 @@ var elTrainTime = $("#train-time").mask("00:00");
 var elTimeFreq = $("#time-freq").mask("00");
 
 
-// Initialize Firebase   GET FIREBASE API KEY 
+// Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDRc8WHqEiPmt5eZgB_HxRygGA31dqHKPg",
-    authDomain: "train-schedule-bd950.firebaseapp.com",
-    databaseURL: "https://train-schedule-bd950.firebaseio.com",
-    projectId: "train-schedule-bd950",
-    storageBucket: "train-schedule-bd950.appspot.com",
-    messagingSenderId: "236709814864"
+    apiKey: "AIzaSyAtgG7Vg6bmjKnQN3W14x1ZVCSrZByp8qM",
+    authDomain: "train-nyc-scheduler.firebaseapp.com",
+    databaseURL: "https://train-nyc-scheduler.firebaseio.com",
+    projectId: "train-nyc-scheduler",
+    storageBucket: "",
+    messagingSenderId: "825959420827"
 };
 
 firebase.initializeApp(config);
@@ -50,7 +50,7 @@ database.ref("/trains").on("child_added", function (snapshot) {
     // add minutesTillArrival to now, to find next train & convert to standard time format
     nextTrainTime = moment().add(minutesTillArrival, "m").format("hh:mm A");
 
-    // append to our table of trains, inside tbody, with a new row of the train data
+    // append to table of trains, inside tbody, with a new row of the train data
     $("#table-data").append(
         "<tr><td>" + snapshot.val().name + "</td>" +
         "<td>" + snapshot.val().destination + "</td>" +
@@ -70,7 +70,7 @@ database.ref("/trains").on("child_added", function (snapshot) {
             $(this).find("span").hide();
         });
 
-    // STARTED BONUS TO REMOVE ITEMS ** not finished **
+    // REMOVE ITEMS 
     $("#table-data").on("click", "tr span", function () {
         console.log(this);
         var trainRef = database.ref("/trains/");
