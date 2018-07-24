@@ -15,6 +15,7 @@ body {
     padding: 2%;
 }
 
+/*cant' get color to work for both panels */
 .panel-custom {
     background-color: darkblue;
     color: white;
