@@ -97,7 +97,7 @@ var storeInputs = function (event) {
     });
 
     //  alert that train was added
-    alert("Train successuflly added!");
+    alert("Train successfully added!");
 
     //  empty form once submitted
     elTrain.val("");
@@ -110,7 +110,7 @@ var storeInputs = function (event) {
 $("#btn-add").on("click", function (event) {
     // form validation - if empty - alert
     if (elTrain.val().length === 0 || elTrainDestination.val().length === 0 || elTrainTime.val().length === 0 || elTimeFreq === 0) {
-        alert("Please Fill All Required Fields");
+        alert("Please Fill All Fields");
     } else {
         // if form is filled out, run function
         storeInputs(event);
@@ -122,7 +122,7 @@ $('form').on("keypress", function (event) {
     if (event.which === 13) {
         // form validation - if empty - alert
         if (elTrain.val().length === 0 || elTrainDestination.val().length === 0 || elTrainTime.val().length === 0 || elTimeFreq === 0) {
-            alert("Please Fill All Required Fields");
+            alert("Please Fill All Fields");
         } else {
             // if form is filled out, run function
             storeInputs(event);
