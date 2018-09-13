@@ -7,11 +7,11 @@ var nextArrival = "";
 var minutesAway = "";
 
 // jQuery global variables
-var elTrain = $("#train-name");
-var elTrainDestination = $("#train-destination");
+var Train = $("#train-name");
+var TrainDestination = $("#train-destination");
 // form validation for Time using jQuery Mask plugin
-var elTrainTime = $("#train-time").mask("00:00");
-var elTimeFreq = $("#time-freq").mask("00");
+var TrainTime = $("#train-time").mask("00:00");
+var TimeFreq = $("#time-freq").mask("00");
 
 // Initialize Firebase
 var config = {
@@ -80,10 +80,10 @@ var storeInputs = function (event) {
     event.preventDefault();
 
     // get & store input values
-    trainName = elTrain.val().trim();
-    trainDestination = elTrainDestination.val().trim();
-    trainTime = moment(elTrainTime.val().trim(), "HH:mm").subtract(1, "years").format("X");
-    trainFrequency = elTimeFreq.val().trim();
+    trainName = Train.val().trim();
+    trainDestination = TrainDestination.val().trim();
+    trainTime = moment(TrainTime.val().trim(), "HH:mm").subtract(1, "years").format("X");
+    trainFrequency = TimeFreq.val().trim();
 
     // add to firebase databse
     database.ref("/trains").push({
@@ -100,16 +100,16 @@ var storeInputs = function (event) {
     alert("Train successfully added!");
 
     //  empty form once submitted
-    elTrain.val("");
-    elTrainDestination.val("");
-    elTrainTime.val("");
-    elTimeFreq.val("");
+    Train.val("");
+    TrainDestination.val("");
+    TrainTime.val("");
+    TimeFreq.val("");
 };
 
 // Calls storeInputs function if submit button clicked
 $("#btn-add").on("click", function (event) {
     // form validation - if empty - alert
-    if (elTrain.val().length === 0 || elTrainDestination.val().length === 0 || elTrainTime.val().length === 0 || elTimeFreq === 0) {
+    if (Train.val().length === 0 || TrainDestination.val().length === 0 || TrainTime.val().length === 0 || TimeFreq === 0) {
         alert("Please Fill All Fields");
     } else {
         // if form is filled out, run function
@@ -121,7 +121,7 @@ $("#btn-add").on("click", function (event) {
 $('form').on("keypress", function (event) {
     if (event.which === 13) {
         // form validation - if empty - alert
-        if (elTrain.val().length === 0 || elTrainDestination.val().length === 0 || elTrainTime.val().length === 0 || elTimeFreq === 0) {
+        if (Train.val().length === 0 || TrainDestination.val().length === 0 || TrainTime.val().length === 0 || TimeFreq === 0) {
             alert("Please Fill All Fields");
         } else {
             // if form is filled out, run function
